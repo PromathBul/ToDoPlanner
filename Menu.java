@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Menu {
 
     static ArrayList<String[]> list = new ArrayList<>();
-    // static String id = "";
 
     /**
      * Метод возвращает случайное целое число от 0 до значения переданного аргумента

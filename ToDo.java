@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.function.Function;
 
 /**
  * Класс, отвечающий за создание списка задача, добавления в него новых задач
@@ -18,37 +17,6 @@ public class ToDo{
     ToDo() {
 
     }
-
-    /**
-     * Метод создания массива уникальных номеров
-     */
-    // Function<Integer, Integer[]> getListID = size -> {
-    //     Integer[] list = new Integer[size];
-    //     Integer id = 1;
-
-    //     for (int i = 0; i < list.length; i++)
-    //         list[i] = id++;
-
-    //     return list;
-    // };
-
-    // Integer[] listID = getListID.apply(1000);
-
-    /**
-     * Получение из массива целых чисел уникального id
-     */
-    // Function<Integer[], String> getID = list -> {
-    //     Integer id = -1;
-
-    //     for (int i = 0; i < list.length; i++)
-    //         if (list[i] != -1) {
-    //             id = list[i];
-    //             list[i] = -1;
-    //             break;
-    //         }
-
-    //     return Integer.toString(id);
-    // };
 
     /**
      * Метод создания массива строк и заполнения его данными о задачи; 
@@ -73,7 +41,6 @@ public class ToDo{
             info[i] = in.nextLine();
         }
 
-        // ToDo obj = new ToDo();
         Date date = new Date();
         SimpleDateFormat dateWithoutTime = new SimpleDateFormat("HH:mm");
         info[4] = dateWithoutTime.format(date);
