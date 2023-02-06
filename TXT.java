@@ -9,7 +9,7 @@ public class TXT implements I_WorkWithFiles {
 
     @Override
     public void writeFile(ArrayList<String[]> list, String nameFile) {
-        try (FileWriter fw = new FileWriter(nameFile, false)) {
+        try (FileWriter fw = new FileWriter(nameFile, true)) {
             for (int i = 0; i < list.size(); i++) {
                 for (int j = 0; j < list.get(i).length; j++)
                     fw.write(list.get(i)[j] + ";");
@@ -35,22 +35,22 @@ public class TXT implements I_WorkWithFiles {
             while ((str = br.readLine()) != null) {
                 System.out.print(txt);
                 for (int i = 0; i < str.length(); i++) {
-                    if(count == 0)
+                    if (count == 0)
                         txt = "дедлайн: ";
-                    else if(count == 1)
+                    else if (count == 1)
                         txt = "автор записи: ";
-                    else if(count == 2)
+                    else if (count == 2)
                         txt = "описание задачи: ";
-                    else if(count == 3)
+                    else if (count == 3)
                         txt = "время записи: ";
-                    else if(count == 4)
+                    else if (count == 4)
                         txt = "дата записи: ";
-                    else if(count == 5)
+                    else if (count == 5)
                         txt = "Оставшееся количество дней: ";
-                    else 
+                    else
                         txt = "";
                     System.out.print(str.charAt(i));
-                    if(str.charAt(i) == ';') {
+                    if (str.charAt(i) == ';') {
                         System.out.print(" " + txt);
                         count++;
                     }

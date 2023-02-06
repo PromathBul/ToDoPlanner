@@ -22,33 +22,33 @@ public class ToDo{
     /**
      * Метод создания массива уникальных номеров
      */
-    Function<Integer, Integer[]> getListID = size -> {
-        Integer[] list = new Integer[size];
-        Integer id = 1;
+    // Function<Integer, Integer[]> getListID = size -> {
+    //     Integer[] list = new Integer[size];
+    //     Integer id = 1;
 
-        for (int i = 0; i < list.length; i++)
-            list[i] = id++;
+    //     for (int i = 0; i < list.length; i++)
+    //         list[i] = id++;
 
-        return list;
-    };
+    //     return list;
+    // };
 
-    Integer[] listID = getListID.apply(1000);
+    // Integer[] listID = getListID.apply(1000);
 
     /**
      * Получение из массива целых чисел уникального id
      */
-    Function<Integer[], String> getID = list -> {
-        Integer id = -1;
+    // Function<Integer[], String> getID = list -> {
+    //     Integer id = -1;
 
-        for (int i = 0; i < list.length; i++)
-            if (list[i] != -1) {
-                id = list[i];
-                list[i] = -1;
-                break;
-            }
+    //     for (int i = 0; i < list.length; i++)
+    //         if (list[i] != -1) {
+    //             id = list[i];
+    //             list[i] = -1;
+    //             break;
+    //         }
 
-        return Integer.toString(id);
-    };
+    //     return Integer.toString(id);
+    // };
 
     /**
      * Метод создания массива строк и заполнения его данными о задачи; 
@@ -58,8 +58,10 @@ public class ToDo{
      */
     public static String[] getData() {
         String[] info = new String[7];
-        for (int i = 1; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             String txt = "Введите ";
+            if (i == 0)
+                txt += "id: ";
             if (i == 1)
                 txt += txt += "дедлайн задачи: в формате dd.MM.yyyy: ";
             else if (i == 2)
@@ -71,8 +73,7 @@ public class ToDo{
             info[i] = in.nextLine();
         }
 
-        ToDo obj = new ToDo();
-        info[0] = obj.getID.apply(obj.listID);
+        // ToDo obj = new ToDo();
         Date date = new Date();
         SimpleDateFormat dateWithoutTime = new SimpleDateFormat("HH:mm");
         info[4] = dateWithoutTime.format(date);
